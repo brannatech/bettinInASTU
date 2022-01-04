@@ -1,117 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">    
-<title>ቁማር በግቢያችን</title>
-<script src="https://unpkg.com/feather-icons"></script>
-<style>
-body {
-  background: url("https://www.w3schools.com/howto/img_link_tree_template2_bg.jpg");
-}
-.container {
-  width: 100%;
-  height: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
+  <title>ቁማር በግቢያችን</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    body {
+      background: url("https://www.w3schools.com/howto/img_link_tree_template2_bg.jpg");
+    }
 
-.links-container {
-  display: flex;
-  flex-direction: column;
-  jusify-content: center;
-  align-items: center;
-}
+    .container {
+      width: 100%;
+      height: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-.links-container a {
-  width: 80%;
-}
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      jusify-content: center;
+      align-items: center;
+    }
 
-.w3-theme-l1:hover {
-  background-color: #f279a1 !important;
-}
+    .links-container a {
+      width: 80%;
+    }
 
-.margin-top-2 {
-  margin-top: 32px;
-}
+    .w3-theme-l1:hover {
+      background-color: #f279a1 !important;
+    }
 
-.bottom {
-  width: 100%;
-  text-align: center;
-  width: auto;
-  font-weight: bolder;
-}
+    .margin-top-2 {
+      margin-top: 32px;
+    }
 
-.bottom span {
-  color: #ed4d82;
-}
+    .bottom {
+      width: 100%;
+      text-align: center;
+      width: auto;
+      font-weight: bolder;
+    }
 
-.bottom svg {
-  stroke: #ed4d82;
-  fill: #ed4d82;
-}
+    .bottom span {
+      color: #ed4d82;
+    }
 
-@media (min-width: 768px) {
-  .link {
-    width: 100%;
-  }
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-</style>
-  </head>
-  <body>
-    <!-- Content container -->
-    <div class="container">
+    .bottom svg {
+      stroke: #ed4d82;
+      fill: #ed4d82;
+    }
 
-      <!-- Links section 1. Replace the # inside of the "" with your links. -->
-      <h1 class="margin-top-2" style="text-align: center;">ቁማር በግቢያችን</h1>
-      <div class="links-container">
-        <iframe width="720" height="480" src="https://youtu.be/Bp3CY6AI2sI"></iframe>
-        <p>Editted audio  
-         <audio controls>
-        <source src="raw_files/edited.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio> </p>
-        <p>Uneditted audio  
-        <audio controls>
+    @media (min-width: 768px) {
+      .link {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px;
+      }
+    }
+
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 600px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Content container -->
+  <div class="container">
+
+    <!-- Links section 1. Replace the # inside of the "" with your links. -->
+    <h1 class="margin-top-2" style="text-align: center; font-weight: 900;color: purple;">ቁማር በግቢያችን</h1>
+    <iframe width="720" height="480" src="https://youtu.be/Bp3CY6AI2sI"></iframe>
+    <p style="font-size: 32;color: purple;">Uneditted audio
+      <audio controls>
         <source src="raw_files/uneditted.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>
-        </P>
-           <a href="raw_files/Script.pdf">Script file</a>
-      </div>
-
-      <!-- Links section 3. Replace the # inside of the "" with your links. -->
-      <h4 class="margin-top-2" style="text-align: center;">The Team</h4>
-      <div class="links-container">
-        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Hashnode</a>
-      </div>
-
-      <!-- Links section 3. Replace the # inside of the "" with your links. -->
-      <h4 class="margin-top-2" style="text-align: center;">MY BUSINESS</h4>
-      <div class="links-container">
-        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Business</a>
-      </div>
-
-      <!-- Bottom section 3 -->
-      <div class="bottom margin-top-2 w3-padding w3-round">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-        <span style="vertical-align: 7px;"> 2021 - Jane Doe</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-      </div>
-
+        Your browser does not support the audio element.
+      </audio>
+    </P>
+    <p style="font-size: 32;color: purple;">Editted audio
+      <audio controls>
+        <source src="raw_files/edited.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </p>
+    <div class="links-container">
+      <a href="raw_files/Script.pdf" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Script
+        file</a>
     </div>
-    <script>
-      feather.replace()
-    </script>
-  </body>  
-</html>
+    <hr>
+    <button class="open-button" onclick="openForm()">View team members</button>
 
+    <div class="form-popup" id="myForm">
+      <form class="form-container">
+        <h1>Group Members</h1>
+        <table>
+          <tr>
+            <td>
+              <h3>Name</h3>
+            </td>
+            <td>
+              <h3>ID</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Fikireab Mekuriaw<b>
+            </td>
+            <td>
+              <b>UGR/17113/11<b>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <b>Ezedin Negash<b>
+            </td>
+            <td>
+              <b>UGR/17096/11<b>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <b>Ezra Berhanu<b>
+            </td>
+            <td>
+              <b>UGR/17097/11<b>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <b>Betsegaw Azerefegn<b>
+            </td>
+            <td>
+              <b>UGR/16879/11<b>
+            </td>
+          </tr>
+        </table>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+
+  </div>
+  <script>
+    feather.replace()
+  </script>
+</body>
+
+</html>
